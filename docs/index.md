@@ -5,7 +5,7 @@ Main documentation for SMJ can be found [here](https://giellalt.github.io/lang-s
 ## Speech synthesis project 2021-2023
 
 Goals:
-- tts for Windows, macOS, Linux, potensially iOS & Android
+- tts for Windows, macOS, Linux, potentially iOS & Android
 - everything as open source
 - two voices (male & female)
 - should work equally well in Sweden & Norway
