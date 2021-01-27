@@ -1,4 +1,6 @@
-# Speech technology resources for Julev Sámi
+# Speech technology resources for Julev Sámi (SMJ)
+
+Main documentation for SMJ can be found [here](https://giellalt.github.io/lang-smj/).
 
 ## Speech synthesis project 2021-2023
 
