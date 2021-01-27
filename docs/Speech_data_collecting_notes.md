@@ -15,7 +15,7 @@ While recording, **keep track on mistakes, hesitations or any changes the speake
 
 ## Pre-processing:
 
-* Aligning speech data and text on phoneme level (WebMAUS)
+* Aligning speech data and text on phoneme level (use [WebMAUS](https://clarin.phonetik.uni-muenchen.de/BASWebServices/interface/WebMAUSBasic))
 * Filename system - consistency!
 * A big data table showing the content and information of EACH FILENAME
 * Allows mass renaming and other mass python operations to be done to the files 
