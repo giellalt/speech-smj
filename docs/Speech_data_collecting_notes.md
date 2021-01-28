@@ -11,7 +11,7 @@
 
 ### Storing:
 
-* Where to store a)speech data and b) metadata
+* Where to store a) speech data and b) metadata
 
 ### Pre-processing:
 
