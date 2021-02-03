@@ -2,7 +2,7 @@
 
 We are going to use the existing grammar checker pipeline infra for text-to-speech (TTS) processing. One of the processing steps is expansion or normalisation of abbreviations, numeric expressions, dates, titles, etc. Presently there is no such tool, but most pieces are available or are easy to build.
 
-The basic idea is a tool with the following interface:
+The basic idea is a tool with the following interface (inspired by `divvung-cgspell`):
 
 ```
 divvun-normaliser \
@@ -138,4 +138,3 @@ This should give a cohort similar to this:
 	"dåktår" Area/NO N Sem/Hum Sg Acc "dåktår>av"Phon <W:0.0>
 		"dr" Area/NO N Sem/Hum ABBR Gram/TAbbr Sg Acc <W:0.0>
 ```
-
