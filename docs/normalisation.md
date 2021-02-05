@@ -84,12 +84,16 @@ This should give a cohort similar to this:
 		"dr" Area/NO N Sem/Hum ABBR Gram/TAbbr Sg Acc <W:0.0>
 ```
 
-**NB!** Beware that this step can generate multiple outputs. If so, each need to be given a new entry in the cohort, but subject to filtering or removal later on. We need to investigate whether this is an issue, and maybe use additional info to avoid additional disambiguation later on.
-
 By using a very simple fst for this purpose, we gain several things:
 - we can use existing transcriptors for the data they cover - as is, more or less
 - it is easy to expand
 - it is easy to test coverage and lexical fst matches
+
+**NB!** Beware that this step can generate multiple outputs. If so, each need to be given a new entry in the cohort, but subject to filtering or removal later on. We need to investigate whether this is an issue, and maybe use additional info to avoid additional disambiguation later on.
+
+Clues for choosing which one to keep - to be used in the next, generation step:
+- the original POS might only fit with one of the substitutions
+- if the original POS results in several generated alternatives, include the `+Sem/` tag when generating, or filter against the `+Sem/` tag as a postprocessing step (or just leave both/all, and let further CG disambiguation do the job)
 
 # 2. Generate new surface form
 
