@@ -19,6 +19,7 @@ Goals:
 
 ## Møte
 
+- [møte  3.2.2021](meetings/2021-02-03.md)
 - [møte 27.1.2021](meetings/2021-01-27.md)
 - [møte 21.1.2021](meetings/2021-01-21.md)
 - [oppstartsmøte ](meetings/2021-01-13.md) med heile prosjektgruppa
