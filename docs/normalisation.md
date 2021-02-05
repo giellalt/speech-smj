@@ -94,7 +94,7 @@ By using a very simple fst for this purpose, we gain several things:
 # 2. Generate new surface form
 
 1. Take the original analysis, and remove every prefixed tag (prefixed tags are those of the form `Abcd/xxx`, where `Abcd/` is the tag prefix) + the target tag (`ABBR` in this case):
-   `Area/NO N Sem/Hum ABBR Gram/TAbbr Attr` ⇒ `N Attr`
+   `Area/NO N Sem/Hum ABBR Gram/TAbbr Sg Acc` ⇒ `N Sg Acc`
 1. Use the new lemma and the new analysis string to generate the corresponding surface form:
    `dåktår N Sg Acc` ⇒ `dåktårav`
 
