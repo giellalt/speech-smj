@@ -1,0 +1,96 @@
+
+# Julevsámegiela pronunciation rules
+
+## Consonants 
+
+* LENGTH: most consonants geminated, many have three distinct quantities
+* Intervocalic geminate plosives voiced?
+
+ORTH.	IPA ALLO_1	IPA ALLO_2	IPA ALLO_3	DESCR./CONDITIONS.
+
+b	[p]	[b̥]		# Voiced as intervocalic geminate // <bena>; <hábbmit>, <oabbá>, <bussa>
+d	[t]	[d̥]		# Voiced as intervocalic geminate // <duodje> [tuoc:ie]
+dj	[c]	[d͡z]		# Voiced when intervocalic? // <duodje> [tuoc:ie], <viedtjat>, <biedjat>
+ddj	[ɟ]	[ddj]		# Voiced palatal plosive // <å:hpadiddje>, guossididdje
+dts	[d͡z]			# <vádtsám>
+dtj	[d͡ʒ]			# <oadtjot>
+f	[f]			# <fállat>
+g	[k]	[ɡ̊]		# Voiced as intervocalic geminate
+h	[h]
+hk	[hk]			# <jáhkav>, <viehke>
+hkk	[(h)kk]		# [h] not audible in Q3 cons. cluster // <jáhkket>, <viehkke>, <tjåhkkåj>
+hp	[hp]			# <dåhpåj>
+hpp	[(h)kk]		# [h] not audible in Q3 cons. cluster? // 
+ht	[ht]			# <giehttjit>
+htt	[(h)tt]		# [h] not audible in Q3 cons. cluster // <giehttot>
+hts	[hts]			# <gáhtsaj>
+htts	[h:ts]			# <boahttsu>
+htj	[htʃ]			# <rahtjat>
+httj	[ht:ʃ]			# <gähttjat>
+j	[j]
+k	[k]	[kʰ]		# Aspirated in Scandinavian loanwords // <kássa>, <káffe>
+l	[l]
+m	[m]
+n	[n]
+ñ	[ŋ]
+ń	[ŋ]
+ŋ	[ŋ]			# <báŋŋka>
+nj	[ɲ]			# <sjnjissjkot>
+nnj	[ɲ:]
+p	[p]	[pʰ]		# Aspirated in Scandinavian loanwords // <káffapánna>, <mannop!>
+r	[r]
+rd	[rt]	[ɖ]		# Retroflex. in Scandinavian loanwords
+rl	[rl]	[ɭ]		# Retroflex. in Scandinavian loanwords // <parlamænnta> /pɑɭɑmæntɑ/
+rn	[rn]	[ɳ]		# Retroflex. in Scandinavian loanwords // <journalissta> /ʃuɳɑlistɑ/
+rt	[rt]	[ʈ]		# Retroflex. in Scandinavian loanwords // <artihkal> /ɑʈihkɑl/
+s	[s]
+sj	[ʃ]			# <sjaddat>
+ssj	[ʃ(:)ʃ]			# <sjnjissjkot>
+t	[t]	[tʰ]	[ʰt]	# Aspirated in Scandinavian loanwords, pre-aspirated in V_# position(??)
+tj	[tʃ]	[ɕ]		# <tjaktja>; Allo. 2 in Sweden (voiceless alveo-palatal fricative): <tjå:hkanit>
+ttj	[t:ʃ]			# <dábttjat>, <gåhttjot>
+ts	[ts]	[ɕ]		# Allo. 2 in Sweden, e.g. // <subtsas>, <subtsastit>
+tts	[t͡s:]			# <váttsij>
+v	[v]	[f]	[ʋ]	# Allo. 2 before a plosive | Allo 3. in the end of a syllable. // <avtta>, <vattáv>
+
+
+## Vowels
+
+* LENGTH: long, short and epenthetic
+
+ORTH.	IPA ALLO_1	IPA ALLO_2 IPA ALLO_3	DESCR./CONDITIONS.
+
+a	[ɑ]	[a]		# ALLO 2 in 2nd syll; <aj> [æj], <muvva> /muv:a:/
+á	[a]	[ɑ:]	[a:]	# <gidá> /kitɑ:/
+e	[ɛ]	[ɛ:]	[iɛ]	# short [ɛ] in open 2nd syll: <tjábbe>, <ladne>; long [ɛ:] in 1st syll; dipth in 2nd syll. <giesse> /kiessie/, <boahtet> /puahtiet/
+i	[i]
+ie	[iɛ] 			# <giesse> /kiessie/, bievdde // only written as <ie> in 2nd syll.
+o	[uɔ]			# <roahkkot> /ruokkuɔt/, <muodojs> /muoduɔjs/
+oa	[ua]	[oɑ]		# <oassen>, <oalle>, ALLO 2: <goaden> /kuadien/
+u	[u]	[ʊ]	[ʉ]	# ALLO 3 in newish Scand. loanwords like <komuvnna>, <bussa>
+uo	[ʊɔ] 			# <vuodo> /vuotuo/
+y	[y] 			# fylka (Scandinavian loanwords)
+å	[ɔ]	[ɔ:]		# ALLO 2 in 2nd syll.
+æ	[æ(:)]	[iæ]	[eæ]	
+ä	[æ(:)]  [iæ]    [eæ] 	# <hähttut>: [heættut]
+ø	[ø] 			# <løhka>
+ö	[ø]
+
+
+* Epenthetic vowels in third grade (Q3), usually between sonorants /r,l,j,v/ and heterorganic consonants, the quality of which is usually identical to that of the preceding vowel.
+* 1st syllable diphthongs are shorter before Q3 consonant than before Q2 consonant.
+* (plain text does not support small superscript letters)
+
+→ <rgg> : [rɑk] // barggo
+→ <rbb> : [rɑp] // dárbbo
+→ <rvv> : [rɑv] // tjoarvve
+-> <rjj>: [rij] // girjje
+→ <lgg> : [lɑk] // álggo
+→ <lbb> : [lɑp] // galbba
+→ <lmm> : [lom] // gålmmå
+→ <lvv> : [lɑv] // dálvve
+→ <jbb> : [jip] // nijbbe
+-> <jdd> : [jed] // niejdda
+→ <vdd> : [vet] // bievdde
+-> <vgg> : [vog] // tjuovggat
+-> <bdd> : [bad] // gábdde
