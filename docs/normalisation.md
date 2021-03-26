@@ -89,7 +89,7 @@ By using a very simple fst for this purpose, we gain several things:
 - it is easy to expand
 - it is easy to test coverage and lexical fst matches
 
-**NB!** Beware that this step can generate multiple outputs. If so, each need to be given a new entry in the cohort, but subject to filtering or removal later on. We need to investigate whether this is an issue, and maybe use additional info to avoid additional disambiguation later on.
+**NB!** Beware that this step can generate multiple outputs. If so, each need to be given a new entry in the cohort, subject to filtering or removal later on. We need to investigate whether this is an issue, and maybe use additional info to avoid disambiguation later on.
 
 Clues for choosing which one to keep - to be used in the next, generation step:
 - the original POS might only fit with one of the substitutions
@@ -102,7 +102,7 @@ Clues for choosing which one to keep - to be used in the next, generation step:
 1. Use the new lemma and the new analysis string to generate the corresponding surface form:
    `dåktår N Sg Acc` ⇒ `dåktårav`
 
-Also this process can generate multiple forms. If so, they likely correspond to varint forms, and will be dealt with in the following steps.
+Also this process can generate multiple forms. If so, they likely correspond to variant forms, and will be dealt with in the following steps.
 
 This should give a cohort similar to this:
 
@@ -128,7 +128,7 @@ If a cascade is not used, the orthographic form is used as input for IPA convers
 
 # 4. Update the analysis
 
-If using cascade, use the output from 3. above, if not, use the output from 2. above, and for each form:
+If using a cascade, use the output from 3. above, if not, use the output from 2. above, and for each form:
 
 1. send it through the analyser (surface or deep), to get the full analysis
 1. update the analysis string to include all information
