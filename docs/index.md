@@ -16,6 +16,7 @@ Goals:
 - [Processing and engine overview](tts_notes_kha.md)
 - [Speech data collecting notes](Speech_data_collecting_notes.md)
 - [Normalisation](normalisation.md) (expansion of abbreviations etc)
+- [Conversion to IPA](Rewrite_to_IPA.md)
 
 ## Møte
 
