@@ -1,1 +1,3 @@
-theme: jekyll-theme-leap-day
+theme: jekyll-theme-minimal
+title: Lule Sami Text-to-Speech
+description: Finite state and Constraint Grammar based Text-to-Speech processing
