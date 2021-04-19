@@ -60,7 +60,7 @@ Given that we retain the VISLCG3 cohort stream even after the IPA conversion, it
 
 # Outputting IPA
 
-We need a very simple tool that will take a VISLCG3 stream, and for each cohort only output the `Phon` strings  (possibly with the plain-text input as comments, for debugging).
+We need a very simple tool that will take a VISLCG3 stream, and for each cohort only output the `Phon` strings  (possibly with the plain-text wordform as comment, for debugging).
 
 Given this input:
 
@@ -83,5 +83,5 @@ This string is then fed to the synthesiser.
 
 In cases where there is still ambiguity left in the CG stream, proceed as follows:
 
-- if the resulting IPA strings are identical, give a warning to `stderr`, and then proceed
-- if the resulting IPA strings are different AND in debug/verbose mode, error out with the strings printed to `stderr`
+- if the resulting IPA strings are identical, give a warning to `stderr`, and proceed
+- if the resulting IPA strings are different AND in debug/verbose mode, print the amboiguous strings to `stderr`, and stop
