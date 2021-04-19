@@ -28,7 +28,7 @@ That is, the output should be something like this (with huge reservations for th
 		"dr" Area/NO N Sem/Hum ABBR Gram/TAbbr Sg Acc <W:0.0>
 ```
 
-# Compounds
+## Compounds
 
 Example input:
 
@@ -52,8 +52,28 @@ or:
 
 The most robust approach is to allow for both variants.
 
-# Other comments
+## Other comments
 
 If there is no `Phon` string in the input, use the wordform in the cohort as a substitute, and create the `Phon` string from the returned IPA. This should also handle cases of unknown input
 
 Given that we retain the VISLCG3 cohort stream even after the IPA conversion, it is possible to do further disambiguation afterwords, if needed or wanted.
+
+# Outputting IPA
+
+We need a very simple tool that will take a VISLCG3 stream, and for each cohort only output the `Phon` strings  (possibly with the plain-text input as comments, for debugging).
+
+Given this input:
+
+```sh
+"<Dr.>"
+	"dåktår" Area/NO N Sem/Hum Sg Acc "dɔkʰtɔrav"Phon <W:0.0>
+		"dr" Area/NO N Sem/Hum ABBR Gram/TAbbr Sg Acc <W:0.0>
+```
+
+return this (or something similar, must be compatible with the synthesiser engines we want to use):
+
+```sh
+dɔkʰtɔrav # Dr.
+```
+
+This string is then fed to the synthesiser.
