@@ -12,11 +12,11 @@ The conversion is done using a rule transducer. Essentially, the algorithm is si
 
 ```sh
 for each main reading; do
-	remove lemma
-	remove weight (starts with `<W`)
-	remove dependency relations (starts with `#`)
-	send the rest to the fst, including tags that can be used to guide the IPA conversion
-	replace the `Phon` string with the returned IPA string, leaving all tags in place
+    remove lemma
+    remove weight (starts with `<W`)
+    remove dependency relations (starts with `#`)
+    send the rest to the fst, including tags that can be used to guide the IPA conversion
+    replace the `Phon` string with the returned IPA string, leaving all tags in place
 done
 ```
 
