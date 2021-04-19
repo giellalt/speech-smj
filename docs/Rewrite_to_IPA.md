@@ -74,6 +74,14 @@ return this (or something similar, must be compatible with the synthesiser engin
 
 ```sh
 dɔkʰtɔrav # Dr.
+
 ```
 
 This string is then fed to the synthesiser.
+
+## Ambiguity handling
+
+In cases where there is still ambiguity left in the CG stream, proceed as follows:
+
+- if the resulting IPA strings are identical, give a warning to `stderr`, and then proceed
+- if the resulting IPA strings are different AND in debug/verbose mode, error out with the strings printed to `stderr`
