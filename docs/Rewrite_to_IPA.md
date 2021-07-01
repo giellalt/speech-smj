@@ -131,6 +131,40 @@ or:
 
 The most robust approach is to allow for both variants.
 
+## Fake three tape fst — abstract phonemic representation
+
+There is now support for building TTS specific analysers that do the analysis in two steps:
+
+1. step: 
+```sh
+echo åludallabehtit | hfst-lookup -q src/analyser-tts-gt-input.hfstol 
+åludallabehtit	oallo»X7dalla>behti>t	0,000000
+```
+2. step:
+```sh
+echo 'oallo»X7dalla>behti>t' | hfst-lookup -q src/analyser-tts-gt-output.hfstol 
+oallo»X7dalla>behti>t	oallot+V+TV+Der/dalla+V+Ind+Prs+Pl2+Err/Orth	0,000000
+```
+
+The plan is to extend `hfst-pmatch` and `hfst-tokenise` such that given the above input, the output should be:
+
+```sh
+echo åludallabehtit | hfst-tokenise -g tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst 
+"<åludallabehtit>"
+	"oallot" Ex/V TV Der/dalla V Ind Prs Pl2 Err/Orth "oallo»X7dalla>behti>t"phon <W:0.0>
+:\n
+```
+
+Using this, we have access to underlying abstractions over phonemes, and more detailed consonant gradation information, which should help us produce more accurate and better speech synthesis.
+
+To use this setup, please configure as follows:
+
+```sh
+./configure --enable-tokenisers --enable-phonetic --enable-tts --enable-custom-fsts
+```
+
+The new tokeniser, `tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst`, is presently not used in the `tools/tts/` build, as it is not yet working as intended.
+
 ## Other comments
 
 If there is no `Phon` string in the input, use the wordform in the cohort as a substitute, and create the `Phon` string from the returned IPA. This should also handle cases of unknown input
