@@ -20,6 +20,7 @@ Goals:
 
 ## Møte
 
+- [møte 12.8.2021](meetings/2021-08-12.md)
 - [møte 24.6.2021](meetings/2021-06-24.md)
 - [møte 17.6.2021](meetings/2021-06-17.md)
 - [møte 10.6.2021](meetings/2021-06-10.md)
