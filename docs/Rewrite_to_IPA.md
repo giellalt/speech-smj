@@ -89,19 +89,7 @@ Input is a VISLCG3 cohort usually containing a `Phon` element (string with `Phon
 		"dr" Area/NO N Sem/Hum ABBR Gram/TAbbr Sg Acc <W:0.0>
 ```
 
-The conversion is done using a rule transducer. Essentially, the algorithm is simply:
-
-```sh
-for each main reading; do
-    remove lemma
-    remove weight (starts with `<W`)
-    remove dependency relations (starts with `#`)
-    send the rest to the fst, including tags that can be used to guide the IPA conversion
-    replace the `Phon` string with the returned IPA string, leaving all tags in place
-done
-```
-
-That is, the output should be something like this (with huge reservations for the actual IPA!):
+The conversion is done using one or more rule transducers. That is, the output should be something like this (with huge reservations for the actual IPA!):
 
 ```sh
 "<Dr.>"
@@ -111,25 +99,11 @@ That is, the output should be something like this (with huge reservations for th
 
 ## Compounds
 
-Example input:
-
-```
-"<álggosijddo>"
-	"sijddo" N Sem/Obj-surfc Sg Nom "sijddo"Phon <W:0.0> @SUBJ> #7->16
-		"álggo" N Sem/Time Cmp/SgNom Cmp "álggo"Phon <W:0.0> #7->16
-```
-
-or:
-
 ```
 "<álggosijddo>"
 	"sijddo" N Sem/Obj-surfc Sg Nom "álggo#sijddo"Phon <W:0.0> @SUBJ> #7->16
-		"álggo" N Sem/Time Cmp/SgNom Cmp <W:0.0> #7->16
+		"álggo" N Sem/Time Cmp/SgNom Cmp "álggo#sijddo"Phon <W:0.0> #7->16
 ```
-
-**To consider:** We don't know yet what the `Phon` string of a compound will look like: will it be only on the main reading, or split among the sub-readings, as the lemma? It will probably be easiest if we can keep the `Phon` string in one place, but that depends on the tool(s) creating the `Phon` strings.
-
-The most robust approach is to allow for both variants.
 
 ## Fake three tape fst — abstract phonemic representation
 
@@ -146,12 +120,12 @@ echo 'oallo»X7dalla>behti>t' | hfst-lookup -q src/analyser-tts-gt-output.hfstol
 oallo»X7dalla>behti>t	oallot+V+TV+Der/dalla+V+Ind+Prs+Pl2+Err/Orth	0,000000
 ```
 
-The plan is to extend `hfst-pmatch` and `hfst-tokenise` such that given the above input, the output should be:
+And `hfst-pmatch` and `hfst-tokenise` have been extended such that given the above input, the output should be:
 
 ```sh
-echo åludallabehtit | hfst-tokenise -g tools/tokenisers/tokeniser-disamb-gt-desc.pmhfst 
+echo åludallabehtit | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<åludallabehtit>"
-	"oallot" Ex/V TV Der/dalla V Ind Prs Pl2 Err/Orth "oallo»X7dalla>behti>t"phon <W:0.0>
+	"oallot" V TV Der/dalla V Ind Prs Pl2 Err/Orth "oallo»X7dalla>behti>t"MIDTAPE <W:0.0>
 :\n
 ```
 
@@ -163,11 +137,16 @@ To use this setup, please configure as follows:
 ./configure --enable-tokenisers --enable-phonetic --enable-tts --enable-custom-fsts
 ```
 
-The new tokeniser, `tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst`, is presently not used in the `tools/tts/` build, as it is not yet working as intended.
+**MISSING!** MIDTAPE is always printed, also in cases where the MIDTAPE is identical to the surface string. It should not, since that will interfere with `phon` data from other steps.
 
-## Other comments
+## Input data priority and IPA conversion 
 
-If there is no `Phon` string in the input, use the wordform in the cohort as a substitute, and create the `Phon` string from the returned IPA. This should also handle cases of unknown input
+The processing goes as follows:
+- `hfst-tokenise` gives a MIDTAPE representation if different from surface form
+- normalisation turns abbreviations into words, and store them in `phon` strings
+- in IPA conversion, MIDTAPE takes presedence over `phon` strings
+- in IPA conversion, if neither MIDTAPE nor `phon` string is present, use word form as starting point (also handles cases of no analysis)
+- use different conversion fst's for MIDTAPE and `phon` strings, and possibly also for different OLang tags
 
 Given that we retain the VISLCG3 cohort stream even after the IPA conversion, it is possible to do further disambiguation afterwords, if needed or wanted.
 
@@ -198,12 +177,12 @@ In cases where there is still ambiguity left in the CG stream, proceed as follow
 
 - if the resulting IPA strings are identical, give a warning to `stderr`, and proceed
 - if the resulting IPA strings are different AND in debug/verbose mode, print the amboiguous strings to `stderr`, and stop
+- if the resulting IPA strings are different AND NOT in debug/verbose mode AND they have different weights: pick the one with the lowest weight, print a warning on `stderr`, and proceed
+- if the resulting IPA strings are different AND NOT in debug/verbose mode AND they have identical weights: pick the first one, print a warning on `stderr`, and proceed
 
 # Open issues
 
-- punctuation conversion
-    - they are presently left as is, but should be converted to symbols for short breaks, intonation modulation etc
-- exceptional pronunciation
-    - we have not yet decided, but it could either be specified in `src/phonetics/txt2ipa.xfscript` or in the lexc files.
+- **punctuation conversion:** they are presently left as is, but should be converted to symbols for various breaks, intonation modulation etc
+- **exceptional pronunciation:** we have not yet decided, but it could either be specified in `src/phonetics/txt2ipa.xfscript` or in the lexc files.
       Using the `txt2ipa` file will work right out of the box, lexc requires some hard thinking
-- make use of syntactic parsing
+- make use of syntactic parsing to govern prosody
