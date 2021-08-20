@@ -32,24 +32,23 @@ make -j6 # takes a while, ~12 minutes on a fast MacBook Pro
 echo 'Skåvlån hæhttuji juohkka akta sierra skåvllåbiktasijt adnet. \
 Eskilin li tjáhppis båvså, tjáhppis jali bieddjis skirtto ja alek slippsa. \
 Næjtsojn li sæmmi skåvllåbiktasa, valla sij máhtti aj vuolppuj tjágŋat.' \
-| tools/tts/modes/smj-analyser.mode
+| tools/tts/modes/smj-tts-txt2ipa.mode
 ```
 
 This will output text of the form:
 
 ```
 "<Skåvlån>"
-	"skåvllå" N Sem/Edu_Org Sg Ine <W:0.0> @ADVL> #1->7 "skɔwlɔn"phon
+	"skåvllå" N Sem/Edu_Org Sg Ine "skåvllå>Q1n"MIDTAPE <W:0.0> @ADVL> #1->7 "skɔvlɔːn"phon
 : 
 "<hæhttuji>"
-	"hæhttut" V IV Ind Prs Pl3 <W:0.0> @FAUX #2->0 "hæhtːʉji"phon
-	"hæhttut" V IV Ind Prt Sg2 <W:0.0> @FAUX #2->0 "hæhtːʉji"phon
+	"hæhttuji" ? @X #2->0 "heætːuji"phon
 : 
 "<juohkka>"
-	"juohkka" Pron Indef Attr <W:0.0> @>Num #3->4 "jʉuhkːɑ"phon
+	"juohkka" Pron Indef Attr "juohkka>"MIDTAPE <W:0.0> @>Num #3->4 "juokːaː"phon
 : 
 "<akta>"
-	"akta" Num Sg Nom <W:0.0> @SUBJ> #4->7 "ɑktɑ"phon
+	"akta" Num Sg Nom "akta>"MIDTAPE <W:0.0> @SUBJ> #4->7 "ɑktaː"phon
 : 
 ```
 
@@ -59,20 +58,20 @@ To exract the phonetic transciption, extend the command above as follows:
 echo 'Skåvlån hæhttuji juohkka akta sierra skåvllåbiktasijt adnet. \
 Eskilin li tjáhppis båvså, tjáhppis jali bieddjis skirtto ja alek slippsa. \
 Næjtsojn li sæmmi skåvllåbiktasa, valla sij máhtti aj vuolppuj tjágŋat.' \
-| tools/tts/modes/smj-analyser.mode \
+| tools/tts/modes/smj-tts-txt2ipa.mode \
 | grep 'phon' | rev | cut -d'"' -f2 | rev | uniq
 ```
 
 The output is then:
 
 ```
-skɔwlɔn
-hæhtːʉji
-jʉuhkːɑ
-ɑktɑ
-sierːɑ
-skɔvlːɔbiktɑsijt
-ɑdnət
+skɔvlɔːn
+heætːuji
+juokːaː
+ɑktaː
+siɛrːaː
+skɔvlːɔːpiktaːsijht
+ɑtnɛht
 .
 ```
 
