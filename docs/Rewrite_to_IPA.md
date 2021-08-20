@@ -2,82 +2,6 @@
 
 We now have a working setup. Below are first instructions for getting started, followed by the original specifications, and a list of open issues.
 
-## Working setup
-
-**Requirements:**
-
-- nightly hfst package from Tino (at least from June 10 or thereabout, June 21 is known to work), see [this](/infra/compiling_HFST3.html#the-simple-installation-you-download-ready-made-programs) for details
-- [newest version of](https://github.com/giellalt):
-    - giella-core
-    - giella-shared
-    - lang-smj
-
-**Configuration & building:**
-
-Run the following commands:
-
-```sh
-cd lang-smj
-./autogen.sh
-./configure --enable-tokenisers --enable-phonetic --enable-tts
-cd tools/tts/
-make dev # creates all modes/ files
-cd ../../
-make -j6 # takes a while, ~12 minutes on a fast MacBook Pro
-```
-
-**Converting text:**
-
-```sh
-echo 'Skåvlån hæhttuji juohkka akta sierra skåvllåbiktasijt adnet. \
-Eskilin li tjáhppis båvså, tjáhppis jali bieddjis skirtto ja alek slippsa. \
-Næjtsojn li sæmmi skåvllåbiktasa, valla sij máhtti aj vuolppuj tjágŋat.' \
-| tools/tts/modes/smj-tts-txt2ipa.mode
-```
-
-This will output text of the form:
-
-```
-"<Skåvlån>"
-	"skåvllå" N Sem/Edu_Org Sg Ine "skåvllå>Q1n"MIDTAPE <W:0.0> @ADVL> #1->7 "skɔvlɔːn"phon
-: 
-"<hæhttuji>"
-	"hæhttuji" ? @X #2->0 "heætːuji"phon
-: 
-"<juohkka>"
-	"juohkka" Pron Indef Attr "juohkka>"MIDTAPE <W:0.0> @>Num #3->4 "juokːaː"phon
-: 
-"<akta>"
-	"akta" Num Sg Nom "akta>"MIDTAPE <W:0.0> @SUBJ> #4->7 "ɑktaː"phon
-: 
-```
-
-To exract the phonetic transciption, extend the command above as follows:
-
-```sh
-echo 'Skåvlån hæhttuji juohkka akta sierra skåvllåbiktasijt adnet. \
-Eskilin li tjáhppis båvså, tjáhppis jali bieddjis skirtto ja alek slippsa. \
-Næjtsojn li sæmmi skåvllåbiktasa, valla sij máhtti aj vuolppuj tjágŋat.' \
-| tools/tts/modes/smj-tts-txt2ipa.mode \
-| grep 'phon' | rev | cut -d'"' -f2 | rev | uniq
-```
-
-The output is then:
-
-```
-skɔvlɔːn
-heætːuji
-juokːaː
-ɑktaː
-siɛrːaː
-skɔvlːɔːpiktaːsijht
-ɑtnɛht
-.
-```
-
-The idea is that the output should be ready to be fed to the TTS engine, to generate the actual
-voice signal.
-
 # Specification
 
 Input is a VISLCG3 cohort usually containing a `Phon` element (string with `Phon` attached at the end):
@@ -132,9 +56,6 @@ Using this, we have access to underlying abstractions over phonemes, and more de
 
 To use this setup, please configure as follows:
 
-```sh
-./configure --enable-tokenisers --enable-phonetic --enable-tts --enable-custom-fsts
-```
 
 **MISSING!** MIDTAPE is always printed, also in cases where the MIDTAPE is identical to the surface string. It should not, since that will interfere with `phon` data from other steps.
 
@@ -181,7 +102,7 @@ In cases where there is still ambiguity left in the CG stream, proceed as follow
 
 # Open issues
 
-- **punctuation conversion:** they are presently left as is, but should be converted to symbols for various breaks, intonation modulation etc
+- **punctuation conversion:** they are presently left as is, but should possibly be converted to symbols for various breaks, intonation modulation etc
 - **exceptional pronunciation:** we have not yet decided, but it could either be specified in `src/phonetics/txt2ipa.xfscript` or in the lexc files.
       Using the `txt2ipa` file will work right out of the box, lexc requires some hard thinking
 - make use of syntactic parsing to govern prosody
