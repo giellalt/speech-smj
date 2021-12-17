@@ -21,6 +21,7 @@ Goals:
 
 ## Møte
 
+- [møte 16.12.2021](meetings/2021-12-16.md)
 - [møte  9.12.2021](meetings/2021-12-09.md)
 - [møte  2.12.2021](meetings/2021-12-02.md)
 - [møte 25.11.2021](meetings/2021-11-25.md)
