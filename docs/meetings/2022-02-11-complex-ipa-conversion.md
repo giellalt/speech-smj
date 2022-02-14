@@ -21,7 +21,8 @@ Idear:
 Døme: `4-hestak`
 
 ```
-echo 4-hestak | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo 4-hestak \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<4-hestak>"
         "4-hestak" ?
 :\n
@@ -30,7 +31,8 @@ echo 4-hestak | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst
 Korleis skal vi dela opp? Ved bindestrek?
 
 ```
-echo 4 | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo 4 \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<4>"
         "4" A Arab Ord Attr CLBfinal "4"MIDTAPE <W:0.0>
         "4" Num Arab Sg Ela Attr "4"MIDTAPE <W:0.0>
@@ -40,7 +42,8 @@ echo 4 | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst
         "4" Num Arab Sg Nom "4>"MIDTAPE <W:0.0>
         "4" Num Sem/ID "4"MIDTAPE <W:0.0>
 :\n
-echo hestak | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo hestak \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<hestak>"
         "hestak" A Attr "hestag9>"MIDTAPE <W:0.0>
         "hestak" A Sg Nom "hestag9>"MIDTAPE <W:0.0>
@@ -55,11 +58,13 @@ Hint om delingspunkt:
 Eit anna døme: `Vuodnabat-Mikál`
 
 ```
-echo Vuodnabat- | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo Vuodnabat- \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<Vuodnabat->"
         "Vuodnabahta" N Prop Sem/Plc Cmp/Sh Cmp/SplitR Cmp "Vuodnabat>-"MIDTAPE <W:0.0>
 :\n
-echo Mikál | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo Mikál \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<Mikál>"
 	"Mikál" ?
 :\n
@@ -103,11 +108,13 @@ væsto-tuvrran
 Nokre av orda er skrivefeil, som `tyska-giellaj` for `tuska-giellaj`
 
 ```
-echo tyska-giellaj | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo tyska-giellaj \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<tyska-giellaj>"
 	"tyska-giellaj" ?
 :\n
-echo tuska-giellaj | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo tuska-giellaj \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<tuska-giellaj>"
         "giella" N Sem/Lang_Tool-catch Sg Ill "tusska>Q1-giella>X4j"MIDTAPE <W:0.0>
                 "dujskagiella" v2 N Sem/Lang OLang/NOB Cmp/SgGen Cmp/Hyph Cmp "tusska>Q1-giella>X4j"MIDTAPE <W:0.0>
@@ -139,7 +146,8 @@ Meir detaljert:
 * `Cmp/Unass` - norsk fyrstedel, samisk andredel
 
 ```
-echo maskindivudahka | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo maskindivudahka \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<maskindivudahka>"
         "divudahka" N Sem/Plc Sg Nom "maskin>∑#divudahka>"MIDTAPE <W:0.0>
                 "masjijnna" N Sem/Obj-el OLang/NOB Cmp/Unass Cmp "maskin>∑#divudahka>"MIDTAPE <W:0.0>
@@ -151,7 +159,8 @@ echo maskindivudahka | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc
 * `OLang/NOB`
 
 ```
-echo masjijnnadivudahka | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo masjijnnadivudahka \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<masjijnnadivudahka>"
         "divudahka" N Sem/Plc Sg Nom "masjijnna∑#divudahka>"MIDTAPE <W:0.0>
                 "masjijnna" N Sem/Obj-el OLang/NOB Cmp/SgNom Cmp "masjijnna∑#divudahka>"MIDTAPE <W:0.0>
@@ -161,7 +170,8 @@ echo masjijnnadivudahka | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-d
 ### Rad-io
 
 ```
-echo radio | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo radio \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<radio>"
         "radio" N Sem/Obj-el OLang/NOB Pl Nom "radio>"MIDTAPE <W:0.0>
         "radio" N Sem/Obj-el OLang/NOB Sg Gen "radio>"MIDTAPE <W:0.0>
@@ -172,7 +182,8 @@ echo radio | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst
 ### Audito-rium
 
 ```
-echo auditorium | hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
+echo auditorium \
+| hfst-tokenise -g tools/tokenisers/tokeniser-tts-cggt-desc.pmhfst 
 "<auditorium>"
         "auditorium" ?
 :\n
