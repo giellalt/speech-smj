@@ -4,7 +4,7 @@ Flammie og Sjur.
 
 # Problem som skal løysast
 
-- ord der ulike delar skal konverterast med ulike fst-ar
+- ord der ulike delar av ordet skal konverterast med ulike fst-ar
 
 Kan brytast ned til desse stega:
 - identifisera kvar del
