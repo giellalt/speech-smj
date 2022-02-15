@@ -70,3 +70,17 @@ Goals:
 - [møte 27.1.2021](meetings/2021-01-27.md)
 - [møte 21.1.2021](meetings/2021-01-21.md)
 - [oppstartsmøte 13.3.2021](meetings/2021-01-13.md) med heile prosjektgruppa
+
+Test:
+
+Is this now true? Test!
+
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+
+It should look great!
