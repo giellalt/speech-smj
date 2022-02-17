@@ -22,6 +22,7 @@ Goals:
 ## Møte
 
 ### 2022
+- [møte 17.2.2022](meetings/2022-02-17.md)
 - [møte 11.2.2022, kompleks ipa-konvertering](meetings/2022-02-11-complex-ipa-conversion.md)
 - [møte 10.2.2022](meetings/2022-02-10.md)
 - [møte  3.2.2022](meetings/2022-02-03.md)
