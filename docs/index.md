@@ -22,6 +22,7 @@ Goals:
 ## Møte
 
 ### 2022
+- [møte 24.3.2022](meetings/2022-03-24.md)
 - [møte 10.3.2022](meetings/2022-03-10.md)
 - [møte  3.3.2022](meetings/2022-03-03.md)
 - [møte 17.2.2022](meetings/2022-02-17.md)
