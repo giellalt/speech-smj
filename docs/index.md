@@ -18,6 +18,7 @@ Goals:
 - [Text (pre)processing](TextProcessing.md)
     - [Normalisation](normalisation.md) (expansion of abbreviations etc)
     - [Conversion to IPA](Rewrite_to_IPA.md)
+- [Draft contract](Avtale%20om%20taleopptak,%20utkast.docx) for voice talents (in Norwegian)
 
 ## Møte
 
