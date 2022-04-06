@@ -2,7 +2,7 @@
 
 Main documentation for SMJ can be found [here](https://giellalt.github.io/lang-smj/).
 
-## Speech synthesis project 2021-2023
+# Speech synthesis project 2021-2023
 
 Goals:
 - tts for Windows, macOS, Linux, potentially iOS & Android
@@ -11,7 +11,7 @@ Goals:
 - should work equally well in Sweden & Norway
 - we want to use the same framework for recreating the sme voices as open source voices
 
-## Documentation
+# Documentation
 
 - [Processing and engine overview](tts_notes_kha.md)
 - [Speech data collecting notes](Speech_data_collecting_notes.md)
@@ -20,9 +20,9 @@ Goals:
     - [Conversion to IPA](Rewrite_to_IPA.md)
 - [Draft contract](Avtale%20om%20taleopptak,%20utkast.docx) for voice talents (in Norwegian)
 
-## Møte
+# Møte
 
-### 2022
+## 2022
 - [møte  6.4.2022](meetings/2022-04-06-NRK.md) med NRK, førebuingar før opptak
 - [møte 31.3.2022](meetings/2022-03-31.md)
 - [møte 24.3.2022](meetings/2022-03-24.md)
@@ -37,7 +37,7 @@ Goals:
 - [møte 13.1.2022](meetings/2022-01-13.md)
 - [møte  5.1.2022](meetings/2022-01-05.md)
 
-### 2021
+## 2021
 - [møte 16.12.2021](meetings/2021-12-16.md)
 - [møte  9.12.2021](meetings/2021-12-09.md)
 - [møte  2.12.2021](meetings/2021-12-02.md)
