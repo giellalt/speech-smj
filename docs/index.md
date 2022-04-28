@@ -23,6 +23,7 @@ Goals:
 # Møte
 
 ## 2022
+- [møte 28.4.2022](meetings/2022-04-28.md)
 - [møte 13.4.2022](meetings/2022-04-13.md)
 - [møte  7.4.2022](meetings/2022-04-07.md)
 - [møte  6.4.2022](meetings/2022-04-06-NRK.md) med NRK, førebuingar før opptak
