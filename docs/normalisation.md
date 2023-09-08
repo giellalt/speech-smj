@@ -142,3 +142,15 @@ This should give a cohort similar to this:
 	"dåktår" Area/NO N Sem/Hum Sg Acc "dåktår>av"Phon <W:0.0>
 		"dr" Area/NO N Sem/Hum ABBR Gram/TAbbr Sg Acc <W:0.0>
 ```
+
+# Actual command
+
+This is now mostly implemented, but must be tested thoroughly. Here's the command to run:
+
+```sh
+./tools/tts/modes/smj-normaliser.mode < textfile.txt  | \
+  ../giella-core/scripts/vislcg-convert.py -t phon -1 | \
+  cut -f1-2    | # This only to get rid of some commented out information
+  grep -v '^:' | # that can be used for debugging
+  grep -v '^$'
+```
