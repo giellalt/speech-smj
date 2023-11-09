@@ -154,3 +154,15 @@ This is now mostly implemented, but must be tested thoroughly. Here's the comman
   grep -v '^:' | # that can be used for debugging
   grep -v '^$'
 ```
+
+And **text-to-text** normalisation can be achieved with this command:
+
+```sh
+./tools/tts/modes/smj-normaliser.mode < textfile.txt  | \
+  ../giella-core/scripts/vislcg-convert.py -t phon -1 | \
+  cut -f2      | # Extract only the second field, the normalised text
+  sed 's/^://' | # Remove the excape char for non-processed data
+  tr -d '\n'   | # Remove newlines - brings back spaces etc to their original position. The next command replaces '\n' with real newlines:
+  sed 's/\\n/\ 
+/g'
+```
