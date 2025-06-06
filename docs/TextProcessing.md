@@ -93,8 +93,8 @@ To mostly restore the text as it was (but now normalised/transkribed), instead d
 
 ```sh
 ... \
-| egrep '(^:|phon)' | rev | cut -d'"' -f2 | rev | uniq | sed -e 's/^://' |\
- tr -d '\n' | sed -e 's/\\n/\n/'
+| egrep '(^:|phon)' | rev | cut -d'"' -f2 | rev | uniq |\
+ sed -e 's/^://' | tr -d '\n' | sed -e 's/\\n/\n/'
 ```
 
 The output then becomes:
