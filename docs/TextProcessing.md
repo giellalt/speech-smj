@@ -89,3 +89,16 @@ skɔvlːɔːpiktaːsijht
 .
 ```
 
+To mostly restore the text as it was (but now normalised/transkribed), instead do like this:
+
+```sh
+... \
+| egrep '(^:|phon)' | rev | cut -d'"' -f2 | rev | uniq | sed -e 's/^://' |\
+ tr -d '\n' | sed -e 's/\\n/\n/'
+```
+
+The output then becomes:
+
+```
+skɔvlɔːn heætːuji juokːaː ɑktaː siɛrːaː skɔvlːɔːpiktaːsijht ɑtnɛht.
+```
