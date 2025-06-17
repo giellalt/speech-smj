@@ -93,8 +93,16 @@ To mostly restore the text as it was (but now normalised/transkribed), instead d
 
 ```sh
 ... \
-| egrep '(^:|phon)' | rev | cut -d'"' -f2 | rev | uniq |\
- sed -e 's/^://' | tr -d '\n' | sed -e 's/\\n/\n/'
+| sed '/phon$/{$!N;//!P;D;}'       | # print the last of several consecutive ""phon lines
+  sed -e 's/\":\"/\"xxcolonxx\"/g' | # protect actual colon
+  egrep '(^:|phon)'                | # grep phon lines or lines starting with colon
+  rev | cut -d'"' -f2 | rev        | # get only the ""phon string content
+  uniq                             | # uniq just in case
+  sed -e 's/^://'                  | # delete colons in first position
+  tr -d '\n'                       | # delete newlines, they are artefacts of earlier steps
+  sed -e 's/\\n/\n/g'              | # convert original newlines to actual newlines
+  sed -e 's/xxcolonxx/:/'          | # restore actual colons
+  ...
 ```
 
 The output then becomes:
@@ -102,3 +110,17 @@ The output then becomes:
 ```
 skɔvlɔːn heætːuji juokːaː ɑktaː siɛrːaː skɔvlːɔːpiktaːsijht ɑtnɛht.
 ```
+
+Uncommented version for easy copy and paste:
+
+```sh
+... \
+| sed '/phon$/{$!N;//!P;D;}' | sed -e 's/\":\"/\"xxcolonxx\"/g' |\
+  egrep '(^:|phon)' | rev | cut -d'"' -f2 | rev | uniq |\
+  sed -e 's/^://' | tr -d '\n' | sed -e 's/\\n/\n/g' | sed -e 's/xxcolonxx/:/'
+```
+
+Note:
+
+The sed command to print the last of many consecutive phon lines (as in multiple possible conversions to text, e.g. of digits), should really be printing the first one. It also discards the main reading in case of cohorts with subreadings - only the last/deepest subreading survives.
+Feel free to improve, although this is just a shell pipeline workaround until similar functionality is added to our CLI tools.
