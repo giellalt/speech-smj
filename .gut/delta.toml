@@ -1,6 +1,6 @@
 template = "https://github.com/giellalt/template-speech-und"
-rev_id = 3
-template_sha = "1e74b8892016f06ee0b35c4557b153ec05b41102"
+rev_id = 4
+template_sha = "0792a9413731351aa6e85069f825ba8fb290da16"
 
 [replacements]
 __UNDEFINED__ = "Julev Sámi"
